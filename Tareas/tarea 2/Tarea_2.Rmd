@@ -1,0 +1,233 @@
+---
+title: "Tarea 2"
+author: "Oscar Omar"
+date: "20/7/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+
+## Ejercicio 1 `PYTHON`
+# a)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(X-1)
+print(solve_univariate_inequality(expr < 3,X))
+```
+# b)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(2-3*X)
+print(solve_univariate_inequality(expr < 1,X))
+```
+# c)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(X-2)
+print(solve_univariate_inequality(expr < 3,X))
+```
+
+
+## Ejercicio 2 `PYTHON`
+# a)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(5-(1/X))
+print(solve_univariate_inequality(expr < 1,X))
+```
+# b)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(X**2 - 2)
+print(solve_univariate_inequality(expr <= 2,X))
+```
+
+## Ejercicio 3 `PYTHON`
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(X + 2) - abs(X-1)
+print(solve_univariate_inequality(expr > 0,X))
+```
+
+## Ejercicio 4 `PYTHON`
+```{python}
+from sympy import *
+from sympy.plotting import plot
+
+x = symbols('x')
+p1 = plot_implicit(x**2-12<3*x, (x,-5.,6.), line_color='c')
+w1=solve_univariate_inequality(x**2-12<3*x,x)
+print(w1)
+p2= plot_implicit(x<x**2-12, (x,-5.,6.), line_color='y')
+w2=solve_univariate_inequality((x<x**2-12), x)
+print(w2)
+```
+
+## Ejercicio 5 `PYTHON`
+```{python}
+from sympy import *
+from sympy.plotting import plot
+
+x = symbols('x')
+p = plot_implicit(abs(x-3)-1/3<0)
+w=solve_univariate_inequality(abs(x-3)-1/3<0,x)
+print(w)
+
+```
+
+## Ejercicio 6 `PYTHON`
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+ax = plt.gca()
+x = np.arange(-5,5,0.01)
+y = (abs(x-2) + abs(x+2))
+ax.plot(x,y)
+ax.spines['left'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['bottom'].set_position('zero')
+ax.spines['top'].set_color('none')
+plt.xticks(np.arange(-5,5,1))
+plt.yticks(np.arange(-8,6.1,2))
+plt.show()
+
+```
+
+
+## Ejercicio 7 `PYTHON`
+# a)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(x**2-3)
+print(solve_univariate_inequality(expr > 1,X))
+```
+# b)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(X**2 - X + 1)
+print(solve_univariate_inequality(expr > 1,X))
+```
+
+## Ejercicio 8 `PYTHON`
+# a)
+```{python}
+import sympy as sp
+X = sp.var('x')
+from sympy.solvers.inequalities import solve_univariate_inequality
+expr=abs(X-4)/abs(X**2+5)
+print(solve_univariate_inequality(expr < 1,X))
+```
+
+## Ejercicio 9 `PYTHON`
+# a)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+x = symbols('x')
+y = symbols('y')
+p1 = plot_implicit(x>y)
+```
+# b)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+x = symbols('x')
+y = symbols('y')
+p1 = plot_implicit(y<=2)
+```
+# c)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+x = symbols('x')
+y = symbols('y')
+p1 = plot_implicit(abs(x-y)<1)
+```
+
+## Ejercicio 10 `PYTHON`
+# a)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+x = symbols('x')
+y = symbols('y')
+expr=abs(x)+abs(y)
+p1 = plot_implicit(expr<1, (x,-1.5,1.5), (y,-1.5,1.5))
+```
+# b)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+x = symbols('x')
+y = symbols('y')
+expr = abs(x-1)-abs(y-1)
+p1 = plot_implicit(expr)
+```
+# c)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+x = symbols('x')
+y = symbols('y')
+p1 = plot_implicit(x*y)
+```
+
+## Ejercicio 11 `PYTHON`
+# a)
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+ax = plt.gca()
+x = np.arange(-5,5,0.01)
+y = (2-(abs(x)/x))
+ax.plot(x,y)
+ax.spines['left'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['bottom'].set_position('zero')
+ax.spines['top'].set_color('none')
+plt.xticks(np.arange(-5,5,1))
+plt.yticks(np.arange(-8,6.1,2))
+plt.show()
+```
+# b)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+scal = 3840/2400
+a = 4.05
+x = symbols('x')
+y = symbols('y')
+plot_implicit((x-1)**2+(y-3)**2<1,x_var=(x,-1,a*scal), y_var=(y,-1,a))
+```
+# c)
+```{python}
+from sympy import symbols
+from sympy.plotting import plot
+scal = 3840/2400
+a = 4.05
+x = symbols('x')
+y = symbols('y')
+plot_implicit(Eq(x**2/4+y**2/9,1), x_var=(x,-a*scal,a*scal), y_var=(y,-a,a))
+```
+
