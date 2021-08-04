@@ -1,0 +1,66 @@
+---
+title: "funciones"
+author: "Oscar Omar"
+date: "4/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+
+## Ejercicio 1 `PYTHON`
+```{python}
+from sympy import limit, Symbol, sqrt
+x = Symbol("x")
+limit((sqrt(1+2*x)-sqrt(1-3*x))/(x+2*x**2),x,0)
+
+```
+
+## Ejercicio 2 `PYTHON`
+```{python}
+from sympy import limit, Symbol, cos
+x = Symbol("x")
+
+limit(cos(1/x),x,0)
+limit(x*cos(1/x),x,0)
+```
+
+
+## Ejercicio 3 `PYTHON`
+```{python}
+#A
+from sympy import limit, Symbol, sqrt, log
+x = Symbol("x")
+
+limit((sqrt(x)-1)/(x-1),x,0)
+
+#B
+a=2
+limit((x**2-(a-1)*x+a)/(x**3-a**3),x,a)
+
+#C
+limit(((1-x)/(1+x))**(1/x),x,a)
+
+#D
+limit((1/x)*log(sqrt((1+x)/(1-x))),x,0)
+
+```
+
+
+## Ejercicio 4 `PYTHON`
+```{python}
+from sympy import limit, Symbol, sin, log, tan
+x = Symbol("x")
+n = Symbol("n")
+a = Symbol("a")
+limit(sin(2*x)/(3*x-5*x**3),x,0)
+limit((x**3+2*(x**4))**(1./3.)/log(1+2*x),x,0)
+limit(((x+1)**n-1)/(n*x),x,0)
+limit(((x+1)**(1/n)-1)/x,x,0)
+limit(tan(x**2-1)/(x-1),x,0)
+limit((a**x-1)/(x*log(a)),x,0)
+```
+
+
