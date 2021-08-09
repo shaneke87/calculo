@@ -1,0 +1,29 @@
+---
+title: "EJercicio Teorema de Bolzao"
+author: "Oscar Omar"
+date: "6/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+
+## Teorema de Bolzano `PYTHON`
+```{python}
+def f(x):
+  return(x**3-x-4)
+a=1
+b=2
+c=(a+b)/2
+epsilon=0.001
+while abs(f(c)) >= epsilon:
+  if f(c)<0:
+    a=c
+  else:
+    b=c
+  c=(a+b)/2
+print("El cero vale con un error menor que\ {0:.3f}: {1:.7f}".format(epsilon,c))
+```
+
