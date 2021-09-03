@@ -1,0 +1,23 @@
+---
+title: "Ejercicios Integrales"
+author: "Oscar Omar"
+date: "23/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+
+## Ejercicio calculo de la integral 
+$$\int_{0}^{1}x^k = \lim_{x \to \infty} \frac{1}{n^{k+1}} \sum_{i=1}^{n}i^k$$
+```{python}
+from sympy import *
+from sympy.abc import i, k, n
+
+for k in range(1,10):
+  valor=Limit(Sum(i**k, (i,1,n)).doit()/n**(k+1),n,oo).doit()
+  print('k={res}, valor integral={valor}'.format(res=k, valor=valor))
+```
+
